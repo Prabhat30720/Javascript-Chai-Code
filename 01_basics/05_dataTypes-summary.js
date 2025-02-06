@@ -37,3 +37,34 @@ console.log(typeof myObj);
 console.log(typeof myFunction);
 console.log(typeof heros);
 console.log(typeof id);
+
+
+// ********************************************* stack memory and heap memory ***********************************************
+
+// stack memory: All primitive data types of javascript uses stack memory. In javascript any primitive datatype is declared we get copy of it
+// anything changes in copy it does not reflect into the origignal stack memory
+
+// Heap memory: All Non-primitive data types of javascript uses heap memory. In javascript any Non-Primitie datatype is declared we get a refrence
+// but the reference variable which pointing to heap memory it get memory allocation in stack memory area
+// any changes in refrence type does reflect to the origianl object because it points or refers to the that object or memory location
+
+let myYouTubeName = "hiteshchaudharydotcom";
+
+let anotherName = "chaiaurcode";
+
+console.log(myYouTubeName);
+console.log(anotherName);
+
+let user = {
+    email: "user@gmail.com",
+    upi: "userbank@upi",
+};
+
+console.log(user.email);
+
+let anotherUser = user;
+
+anotherUser.email = "anotherUser@google.com";
+
+console.log(user.email);
+console.log(anotherUser.email);
