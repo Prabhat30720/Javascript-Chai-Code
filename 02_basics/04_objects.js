@@ -103,7 +103,7 @@ const course = {
 const {courseInstructor: instructor} = course;
 console.log(instructor);
 
-// APIs return a values from backend, ealry the APIs values comes in XML structure but now it is in JSON format
+// APIs return a values from backend, ealry the APIs values comes in XML structure but now it is in JSON (Javascript Object Notation) format
 
 // How JSON looks like ? It looks like a object but without the name, in JSON the key-value pair are always be in string format
 
