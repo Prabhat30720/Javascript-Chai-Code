@@ -87,3 +87,28 @@ console.log(Object.values(anotherTinderUser));
 console.log(Object.entries(anotherTinderUser));
 
 console.log(anotherTinderUser.hasOwnProperty("isLoggedIn"));
+
+const course = {
+    courseName : "Javascript by Hitesh Chaudhary",
+    price: 0,
+    courseInstructor: "Hitesh Chaudhary",
+};
+
+// desctructuring the object values in javascript
+
+// const {courseInstructor} = course;
+
+// we can rename the object variables
+
+const {courseInstructor: instructor} = course;
+console.log(instructor);
+
+// APIs return a values from backend, ealry the APIs values comes in XML structure but now it is in JSON format
+
+// How JSON looks like ? It looks like a object but without the name, in JSON the key-value pair are always be in string format
+
+{
+    "name": "Hitesh Chaudhary",
+    "coursename": "JS in Hindi",
+    "price": "Free",
+}
