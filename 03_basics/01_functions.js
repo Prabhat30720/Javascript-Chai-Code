@@ -43,3 +43,30 @@ function loginUserMessage(username){
 
 console.log(loginUserMessage("Prabhat Jaiswar"));
 loginUserMessage();
+
+// parameter ...price is called rest operator
+
+function calculateCartPrice(...price){
+    return price;
+}
+
+console.log(calculateCartPrice(200, 400, 600));
+
+const webDevCourse = {
+    instructor: "Hitesh Choudhary",
+    price: 399,
+}
+
+function handleObject(anyObject){
+    console.log(`Welcome to Web Development course organised by ${anyObject.instructor} lowest price at ${anyObject.price}`);
+}
+
+handleObject(webDevCourse);
+
+const myNewArray = [200, 400, 100, 600];
+
+function returnSecondValue(getArray){
+    return getArray[1];
+}
+
+console.log(returnSecondValue(myNewArray));
