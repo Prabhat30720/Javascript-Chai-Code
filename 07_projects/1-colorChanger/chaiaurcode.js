@@ -1,16 +1,3 @@
-# Projects related to DOM
-
-## Project link
-
-[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
-
-# Solution Code
-
-## Project 1: Color Switcher
-
-```javascript
-console.log("javascript Project: Color Switcher");
-
 const buttons = document.querySelectorAll(".button");
 const body = document.querySelector("body");
 
@@ -30,5 +17,3 @@ buttons.forEach(function (button){
         }
     });
 });
-
-```
