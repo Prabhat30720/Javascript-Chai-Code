@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+    addLanguage("typescript");
+
+    function addOptimiseLangguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+    addOptimiseLangguage("golang");
+
+    // Edit
+
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    // secondLanguage.innerHTML = "Mojo";
+    const updatedLi = document.createElement("li");
+    updatedLi.innerText = "Mojo";
+    secondLanguage.replaceWith(updatedLi);
+
+    // Edit: by using outerHTML
+
+    const firstLanguage = document.querySelector("li:first-child");
+    /* const editedLi = document.createElement("li");
+    editedLi.innerText = "Typescript";
+    firstLanguage.replaceWith(editedLi); */
+    firstLanguage.outerHTML = '<li>Typescript</li>';
+
+    // Remove the last child of the list
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+</html>
