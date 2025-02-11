@@ -33,7 +33,7 @@ buttons.forEach(function (button){
 
 ```
 
-## project 2: BMI Calculator
+## Project 2: BMI Calculator
 
 ```javascript
 
@@ -63,5 +63,23 @@ form.addEventListener('submit', function (event){
         result.innerHTML = `<span>${bmi}</span>`
     }
 });
+
+```
+
+## Project 3: Digital Clock
+
+```javascript
+
+// const clock = document.querySelector("#clock");
+
+const clock = document.getElementById("clock");
+
+
+// setInterval(callback, time); ---> run a javvascript function in a particular time frame
+
+setInterval(function(){
+    let date = new Date();
+    clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
 
 ```
