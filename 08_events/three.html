@@ -12,10 +12,19 @@
 </body>
 
 <script>
-    const sayDate = function(){
-        console.log("Hello Prabhat!", Date.now());
+    const sayDate = function(str){
+        console.log(str + " Prabhat!", Date.now());
     };
 
-    setInterval(sayDate, 1000);
+    let intervalId;
+
+    document.querySelector("#start").addEventListener("click", function(){  
+        intervalId = setInterval(sayDate, 1000, "Hello");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function(){
+        clearInterval(intervalId);
+    });
+
 </script>
 </html>
