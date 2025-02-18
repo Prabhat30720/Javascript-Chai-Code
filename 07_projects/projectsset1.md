@@ -187,6 +187,34 @@ function newGame(){
 
 ```
 
+## Project 5: Event Key Code Project
+
+```javascript
+
+const insert = document.getElementById("insert");
+
+window.addEventListener("keydown", (event) => {
+    insert.innerHTML = `
+        <div class ="color">
+            <table>
+                <tr>
+                    <th>Key</th>
+                    <th>Keycode</th>
+                    <th>Code</th>
+                </tr>
+                <tr>
+                    <td>${event.key === " " ? "Space":event.key}</td>
+                    <td>${event.keyCode}</td>
+                    <td>${event.code}</td>
+                </tr>
+            </table>
+        </div>
+    `;
+});
+
+```
+
+
 ## Project 6: Change Background Colors
 
 ```javascript
@@ -224,6 +252,5 @@ const stopChangingColor = function(){
 document.querySelector("#start").addEventListener("click", startChangingColor);
 
 document.querySelector("#stop").addEventListener("click", stopChangingColor);
-
 
 ```
