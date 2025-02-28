@@ -1,0 +1,31 @@
+body{
+    background-color: #212121; 
+    color: aliceblue; 
+}
+
+.card{
+    height: 300px;
+    width: 250px;
+    background-color: gray;
+    position: absolute;
+    top: 200px;
+    left: 650px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+button{
+    position: relative;
+    top: 470px;
+    left: 720px;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 4px;
+    border: none;
+}

@@ -4,21 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APIs</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #212121; color: aliceblue;">
-    <div>
+<body>
+    <div class="description">
         0	UNSENT	Client has been created. open() not called yet.
         1	OPENED	open() has been called.
         2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
         3	LOADING	Downloading; responseText holds partial data.
         4	DONE	The operation is complete.
     </div>
+    <div class="card">
+        <p id="image"></p>
+        <p id="followers"></p>
+
+    </div>
+    <button id="clickMe">Click Me</button>
 </body>
 <script>
     const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+    // Creating a XMLHttpRequest() object
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "requestUrl");
-    console.log(xhr.readyState);
+    xhr.open("GET", requestUrl);
+    
+    // Checking all the states
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            // JSON.parse converts string to JSON format
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            console.log(typeof data);
+            console.log(data.followers);
+            const hiteshImage = "https://yt3.googleusercontent.com/arHIKjc6JTqF_b4QJKPHhQC_Jr8q0XfI7LEpJ0-VuiI0ZRz9xFNz94TWl4CLOcozLx-iAhV_=s900-c-k-c0x00ffffff-no-rj";
+            document.getElementById("clickMe").addEventListener("click", function(){
+                document.getElementById("image").innerHTML = `<img src =hiteshImage>`;
+                document.getElementById("followers").innerHTML = `Followers ${data.followers}`;
+            });
+        }
+    };
+    
     xhr.send();
 </script>
 </html>
