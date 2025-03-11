@@ -23,19 +23,23 @@ const chai = {
 
 console.log(chai);
 
-/* console.log(Object.getOwnPropertyDescriptor(chai, "chaiName"));
+console.log(Object.getOwnPropertyDescriptor(chai, "chaiName"));
 
 // Enabling the object to update or change it's properties
 
 Object.defineProperty(chai, "chaiName", {
-    writable: false,
-    enumerable: false
+    // writable: false,
+    // enumerable: false,
+    // if enumerable: true then we can iterate the chaiName property of object chai else not iterable if enumerable: false
+    enumerable: true
 });
 
-console.log(Object.getOwnPropertyDescriptor(chai, "chaiName")); */
+console.log(Object.getOwnPropertyDescriptor(chai, "chaiName"));
 
 for (let [key, value] of Object.entries(chai)) {
     if (typeof value !== "function") {
         console.log(`${key} : ${value}`);
-    }  
+    }
+
+    // console.log(`${key} - ${value}`);
 }
