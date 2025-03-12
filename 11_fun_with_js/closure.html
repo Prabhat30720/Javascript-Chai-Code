@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<style>
+    button{
+        width: 100px;
+        height: 30px;
+    }
+</style>
+
+<body style="background-color: #1c1c1c;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+<script>
+
+    // Lexical scoping
+
+    /* function outer(){
+        let username = "Prabhat30720";
+        console.log("Outer", lastName);
+        function inner(){
+            let lastName = "Jaiswar";
+            console.log("Inner:", username);
+        }
+
+        function innerTwo(){
+            console.log("Inner Two", username);
+            console.log("Inner", lastName);
+        }
+
+        inner();
+        innerTwo();
+    }
+
+    outer();
+
+    console.log("TOO Outer function", username); */
+
+    function makeFunc(){
+        const name = "Google Chrome";
+        function displayName(){
+            console.log(name);
+        }
+        // This returns the entire lexical scope (returns makeFunc function) not only the displayName function 
+        return displayName;
+    }
+
+    const myFunc = makeFunc()
+    myFunc();
+
+</script>
+
+<script>
+
+    // This logic will not work if there are multiple buttons to click. We are not  following the DRY Concept.
+    // DRY (Do Not Repeat Yourself) 
+
+    /* document.getElementById("orange").onclick = function(){
+        document.body.style.backgroundColor = `orange`;
+    };
+    document.getElementById("green").onclick = function(){
+        document.body.style.backgroundColor = `green`;
+    }; */
+
+    function clickHandler(color){
+        // Below code does not change the background color
+        // document.body.style.backgroundColor = `${color}`;
+
+        // This will return the entire ClickHandler function (lexical scope)
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById("orange").onClick = clickHandler("orange");
+    document.getElementById("green").onClick = clickHandler("green");
+
+    /* document.getElementById("orange").addEventListener("click", function(){
+        console.log("Orange button is clicked");
+    });
+
+    document.getElementById("green").addEventListener("click", function(){
+        console.log("Green button is clicked");
+    }); */
+
+</script>
+
+</html>
