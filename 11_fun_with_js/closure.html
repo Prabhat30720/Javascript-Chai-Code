@@ -70,25 +70,18 @@
     }; */
 
     function clickHandler(color){
-        // Below code does not change the background color
+        // Below code does not change the background color when button is clicked
         // document.body.style.backgroundColor = `${color}`;
 
         // This will return the entire ClickHandler function (lexical scope)
+        
         return function(){
             document.body.style.backgroundColor = `${color}`;
-        }
-    }
+        };
+    };
 
-    document.getElementById("orange").onClick = clickHandler("orange");
-    document.getElementById("green").onClick = clickHandler("green");
-
-    /* document.getElementById("orange").addEventListener("click", function(){
-        console.log("Orange button is clicked");
-    });
-
-    document.getElementById("green").addEventListener("click", function(){
-        console.log("Green button is clicked");
-    }); */
+    document.getElementById('orange').onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
 
 </script>
 
